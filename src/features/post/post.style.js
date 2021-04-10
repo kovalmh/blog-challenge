@@ -7,7 +7,8 @@ const Title = styled.span`
 `;
 
 const ListItem = styled.li`
-    color: blue
+    color: blue;
+    font-style: italic;
 `;
 
 export { Title, ListItem };

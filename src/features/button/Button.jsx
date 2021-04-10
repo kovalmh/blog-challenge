@@ -5,7 +5,7 @@ import CreateBtn from './button.style';
 function Button(props) {
   const { onClick } = props;
   return (
-    <CreateBtn onClick={onClick} children='Создать пост' />
+    <CreateBtn onClick={onClick} children={props.children} />
   );
 }
 
