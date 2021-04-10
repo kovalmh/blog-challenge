@@ -6,13 +6,11 @@ import Button from '../button/Button.jsx';
 function PostsList(props) {
   const { history } = props;
   const [posts, setPosts] = useState([]);
-  const [newPost, setNewPost] = useState(false);
 
   const createPost = () => {
     const title = prompt('Введите заголовок');
     const body = prompt('Введите сообщение');
     axios.post('https://bloggy-api.herokuapp.com/posts', { title, body });
-    setNewPost(true);
   };
 
   useEffect(() => {
