@@ -9,15 +9,15 @@ function PostsList(props) {
 
   const createPost = () => {
     const title = prompt('Введите заголовок');
-    const body = prompt('Введите сообщение');
-    axios.post('https://bloggy-api.herokuapp.com/posts', { title, body });
+    const body = prompt('Введите текст поста');
+    if (title && body) {
+      axios.post('https://bloggy-api.herokuapp.com/posts', { title, body });
+    }
   };
 
-  useEffect(() => {
-    axios('https://bloggy-api.herokuapp.com/posts')
-      .then((res) => {
-        setPosts(res.data);
-      });
+  useEffect(async () => {
+    await axios('https://bloggy-api.herokuapp.com/posts')
+      .then((res) => setPosts(res.data));
   });
 
   const postItems = posts.map((post) => <Post key={post.id} post={post} history={history} />);
