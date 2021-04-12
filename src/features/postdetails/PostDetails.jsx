@@ -15,7 +15,6 @@ import {
 
 function PostDetails(props) {
   const [post, setPost] = useState('');
-  const [comments, setComments] = useState([]);
   const { postId } = props.match.params;
 
   useEffect(async () => {
